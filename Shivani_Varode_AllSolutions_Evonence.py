@@ -1,4 +1,4 @@
-#1)
+#1)Scenario 1: Data ValidationTask
 def validate_data(data):
     def check(entry):
         try:
@@ -11,7 +11,7 @@ def validate_data(data):
         return None
     return list(filter(None,(check(item) for item in data)))
 
-#2)
+#2)Scenario 2: Logging DecoratorTask
 import time
 from functools import wraps
 from contextlib import contextmanager
@@ -33,7 +33,7 @@ def calculate_sum(n):
 result = calculate_sum(1000000)
 print("Sum: " , result)
 
-#3)
+#3)Scenario 3: Missing Value Handling
 import pandas as pd
 def smart_fill_income(df):
     skew_val = df["income"].skew()
@@ -55,7 +55,7 @@ print("Skewness:", skewness)
 print("Value used for filling:", used_value)
 print(updated_df)
 
-#4)
+#4)Scenario 4: Text Pre-processing
 import pandas as pd
 import re
 def preprocess_text(df, col):
@@ -78,7 +78,7 @@ cleaned_df = preprocess_text(df, "text")
 print(cleaned_df)
 
 
-#5)
+#5)Scenario 5: Hyperparameter Tuning
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
@@ -126,7 +126,7 @@ for score, params in top3:
     print(score, params)
 
 
-#6)
+#6)Scenario 6: Custom Evaluation Metric
 import numpy as np
 from sklearn.metrics import confusion_matrix, make_scorer
 def weighted_accuracy(y_true, y_pred):
@@ -144,7 +144,7 @@ y_pred = np.array([0, 1, 0, 0, 1, 1])
 print("Weighted Accuracy:", weighted_accuracy(y_true, y_pred))
 
 
-#7)
+#7)Scenario 7: Image Augmentation
 import tensorflow as tf
 from tensorflow.keras import layers
 class RandomApply(layers.Layer):
@@ -174,7 +174,7 @@ def augment_dataset(dataset):
     ).prefetch(tf.data.AUTOTUNE)
 
 
-#8)
+#8)Scenario 8: Model Callbacks
 import tensorflow as tf
 class SmartEarlyStopping(tf.keras.callbacks.Callback):
     def __init__(self, patience=3):
@@ -207,7 +207,7 @@ model.compile(optimizer='adam', loss='mse')
 early_stopping = SmartEarlyStopping(patience=3)
 
 
-#9)
+#9)Scenario 9: Structured Response Generation
 import google.generativeai as genai
 import json
 import re
@@ -253,7 +253,7 @@ result = get_structured_response()
 print(result)
 
 
-#10)
+#10)Scenario 10: Summarization with Constraints
 import re
 def summarize(article, model):
     res = model.generate_content(f"Summarize in exactly 2 sentences under 50 words:\n{article}")
